@@ -33,7 +33,7 @@ class ShopItemViewModel : ViewModel() {
 
     fun getShopItem(shopItemId: Int) {
         val item = getShopItemUseCase.getShopItem(shopItemId)
-        _shopItem.value = item
+//        _shopItem.value = item
     }
 
     fun addShopItem(inputName: String?, inputCount: String?) {
