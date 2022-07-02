@@ -51,8 +51,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupSwipeListener(rvShopList: RecyclerView) {
-        val callBack = object :
-            ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+        val callBack = object : ItemTouchHelper.SimpleCallback(
+            0,
+            ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
+        ) {
             override fun onMove(
                 recyclerView: RecyclerView,
                 viewHolder: RecyclerView.ViewHolder,
@@ -74,14 +76,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupClickListener() {
         shopListAdapter.onShopItemClickListener = {
-            Log.d("MainActibity", it.toString())
+            Log.d("MainActivity", it.toString())
             val intent = ShopItemActivity.newIntentEditItem(this, it.id)
             startActivity(intent)
         }
     }
 
     private fun setupLongClickListener() {
-        shopListAdapter.onShopItemLongClickListener = { viewModel.changeEnableState(it) }
+        shopListAdapter.onShopItemLongClickListener = {
+            viewModel.changeEnableState(it)
+        }
     }
 
 
